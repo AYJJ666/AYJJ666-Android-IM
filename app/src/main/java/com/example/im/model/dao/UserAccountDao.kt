@@ -18,7 +18,7 @@ interface UserAccountDao {
     fun getAccountNumber(userId: String): Int
 
     @Query("select * from UserAccount where userId = :userId")
-    fun getAccountByUserId(userId: String): UserAccount
+    fun getAccountByUserId(userId: String): UserAccount?
 
 
 //    fun addAccount(user: UserInfo) {

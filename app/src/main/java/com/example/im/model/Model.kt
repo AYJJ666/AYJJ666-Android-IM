@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.im.model.db.ContactManager
 import com.example.im.model.listener.EventListener
+import com.example.im.utils.NameUtil
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -25,6 +26,7 @@ object Model : Application() {
     }
 
     fun loginSuccess(userId: String) {
+        //刷新联系人
         ContactManager.refreshContacts()
     }
 

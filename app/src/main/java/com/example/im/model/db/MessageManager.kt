@@ -72,4 +72,8 @@ object MessageManager {
         }
         return cache
     }
+
+    fun clear() {
+        messageDao.deleteAll()
+    }
 }

@@ -8,87 +8,84 @@
     tools:context=".controller.activity.LoginActivity">
 
     <Toolbar
-        android:layout_gravity="center"
-        android:background="@color/blue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/blue">
+
         <TextView
-            android:textSize="28sp"
-            android:text="登录"
-            android:gravity="center"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="登录"
+            android:textSize="28sp" />
     </Toolbar>
+
     <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="70dp"
         android:gravity="center"
         android:text="环信IM"
-        android:textSize="25sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="25sp" />
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <TextView
-            android:textSize="25sp"
-            android:text="用户名："
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="用户名："
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/edt_login_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <TextView
-            android:textSize="25sp"
-            android:text="密    码："
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="密    码："
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/edt_login_pwd"
             android:layout_width="match_parent"
-            android:password="true"
             android:layout_height="wrap_content"
+            android:password="true"
             tools:ignore="Deprecated" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <Button
             android:id="@+id/btn_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="注册"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:text="注册" />
 
         <Button
             android:id="@+id/btn_login_login"
-            android:text="登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:text="登录" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_login_toMain"
-        android:text="首页"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 </LinearLayout>

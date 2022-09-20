@@ -10,11 +10,12 @@ import com.example.im.model.bean.UserAccount
 import com.example.im.model.dao.InviteDao
 import com.google.gson.Gson
 import com.hyphenate.chat.EMClient
+import kotlin.random.Random
 
 object TestUtils {
     private const val TAG = "TestUtils"
     fun test() {
-//        Log.d(TAG, Gson().toJson(UserAccount("157", "1234", false)))
+//        for (i in 0..10)
 
     }
 

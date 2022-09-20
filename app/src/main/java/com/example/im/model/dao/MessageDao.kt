@@ -15,6 +15,9 @@ interface MessageDao {
     @Query("delete from Message where userId = :userId")
     fun deleteByUserId(userId: String)
 
+    @Query("delete from Message")
+    fun deleteAll()
+
     @Update
     fun updateMessage(message: Message): Int
 

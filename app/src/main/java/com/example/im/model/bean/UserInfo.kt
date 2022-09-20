@@ -16,6 +16,7 @@ open class UserInfo(
     open var email: String = "暂未设置",
     open var gender: Int = 1,
 ) {
+
     constructor(user: EMUserInfo) : this(
         user.userId,
         user.nickname,

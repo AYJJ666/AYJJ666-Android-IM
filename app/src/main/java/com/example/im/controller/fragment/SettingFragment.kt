@@ -73,10 +73,13 @@ class SettingFragment : Fragment() {
         }
 
         binding.btnSettingLogout.setOnClickListener {
-            EMClient.getInstance().logout(true)
-            //清空数据库 todo
-            context?.let { it1 -> LoginActivity.start(it1) }
-            activity?.finish()
+            CoroutineScope(Job()).launch {
+                //清空数据库
+                UserAccountManager.logout()
+                context?.let { it1 -> LoginActivity.start(it1) }
+                activity?.finish()
+            }
+
         }
 
         binding.btnSetNickname.setOnClickListener {
@@ -106,20 +109,19 @@ class SettingFragment : Fragment() {
     private fun initUserAccount() {
         //基本信息
         Model.getGlobalThreadPool().execute {
-            val userAccount = UserAccountManager.currentUserAccount
-            Log.d(TAG, userAccount.toString())
-            activity?.runOnUiThread {
-                userAccount.let {
+            UserAccountManager.currentUserAccount.let {
+                activity?.runOnUiThread {
                     binding.run {
-                        tvNickname.text = userAccount.nickname
-                        tvSign.text = userAccount.signature
+                        tvNickname.text = it.nickname
+                        tvSign.text = it.signature
                     }
                     Glide.with(binding.root)
-                        //                .load(userInfo.avatarUrl)
-                        .load(userAccount.avatarUrl)
+                        .load(it.avatarUrl)
                         .into(binding.imgAvatar)
+
                 }
             }
+
 
         }
 

@@ -144,7 +144,11 @@ object ContactManager {
                     arrayOf(userId),
                     object : EMValueCallBack<Map<String, EMUserInfo>> {
                         override fun onSuccess(value: Map<String, EMUserInfo>) {
-                            value[userId]?.let { continuation.resume(Contact(it)) }
+                            if (value[userId] != null && value[userId]?.nickname != "") {
+                                value[userId]?.let { continuation.resume(Contact(it)) }
+                            } else {
+                                continuation.resume(null)
+                            }
                         }
 
                         override fun onError(error: Int, errorMsg: String?) {
@@ -154,6 +158,11 @@ object ContactManager {
                     })
 
         }
+
+    fun clear() {
+        contacts.clear()
+        contactDao.deleteAll()
+    }
 
 
 }
